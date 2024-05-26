@@ -5,6 +5,16 @@ import { assets } from "../assets/assets";
 const Sidebar = () => {
     return (
         <div className = "sidebar w-[25%] h-full p-2 flex-col gap-2 text-white hidden lg:flex">
+            <div className = "bg-[#121212] h-[20%] rounded flex flex-row items-center">
+                <div>
+                    <img className = "w-[150px] pl-4" src = { assets.beatboxLogo } alt = "beatbox_logo" />
+                </div>
+                <div className = "font-bold text-2xl pl-4">
+                    <p>Beatbox</p>
+                    <p>- Rishab.H</p>
+                </div>
+            </div>
+
             <div className = "bg-[#121212] h-[15%] rounded flex flex-col justify-around">
                 <div className = "flex items-center gap-3 pl-8 cursor-pointer">
                     <img className = "w-6" src = { assets.home_icon } alt = "home_icon" />
@@ -17,7 +27,7 @@ const Sidebar = () => {
                 </div>
             </div>
 
-            <div className = "bg-[#121212] h-[85%] rounded">
+            <div className = "bg-[#121212] h-[65%] rounded">
                 <div className = "p-4 flex items-center justify-between">
                     <div className = "flex items-center gap-3">
                         <img className = "w-8" src = { assets.stack_icon } alt = "stack_icon" />
