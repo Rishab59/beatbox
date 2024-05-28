@@ -1,7 +1,7 @@
-import React, { useEffect } from "react" ;
+import React from "react" ;
 
 import { assets } from "../assets/assets" ;
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -21,9 +21,11 @@ const Navbar = () => {
                         Switch to root
                     </p>
 
-                    <p className = "bg-black px-3 py-1 rounded-2xl text-[15px] border-2 border-white hover:bg-gray-100 hover:text-black cursor-pointer">
-                        Source Code
-                    </p>
+                    <NavLink to = "https://github.com/Rishab59/beatbox" target = "_blank">
+                        <p className = "bg-black px-3 py-1 rounded-2xl text-[15px] border-2 border-white hover:bg-gray-100 hover:text-black cursor-pointer">
+                            Source Code
+                        </p>
+                    </NavLink>
 
                     <p className = "bg-yellow-400 text-black w-8 h-8 rounded-full flex items-center justify-center">
                         R
