@@ -1,7 +1,8 @@
 import React from "react" ;
-import Sidebar from "./components/Sidebar";
-import Player from "./components/Player";
-import Display from "./components/Display";
+
+import Sidebar from "./components/Sidebar" ;
+import Player from "./components/Player" ;
+import Display from "./components/Display" ;
 
 
 const App = () => {
@@ -14,7 +15,7 @@ const App = () => {
       <Player />
     </div>
   ) ;
-}
+} ;
 
 
 export default App ;
