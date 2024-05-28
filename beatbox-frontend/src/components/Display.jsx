@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from "react" ;
 import { Route, Routes, useLocation } from "react-router-dom";
-import DisplayHome from "./DisplayHome";
-import DisplayAlbum from "./DisplayAlbum";
-import { albumsData } from "../assets/assets";
+
+import DisplayHome from "./DisplayHome" ;
+import DisplayAlbum from "./DisplayAlbum" ;
+import { albumsData } from "../assets/assets" ;
 
 
 const Display = () => {
@@ -23,7 +24,8 @@ const Display = () => {
         else{
             displayRef.current.style.background = `#121212` ;
         }
-    })
+    }) ;
+
 
     return (
         <div ref = { displayRef } className = "home w-[100%] m-2 px-6 pt-4 rounded bg-[#121212] text-white overflow-auto lg:w-[80%] lg:ml-0">
