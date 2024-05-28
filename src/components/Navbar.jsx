@@ -1,4 +1,4 @@
-import React from "react" ;
+import React, { useEffect } from "react" ;
 
 import { assets } from "../assets/assets" ;
 import { useNavigate } from "react-router-dom";
@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
     const navigate = useNavigate() ;
+
 
     return (
         <>
@@ -16,15 +17,17 @@ const Navbar = () => {
                 </div>
 
                 <div className = "flex items-center gap-4">
-                    <p className = "bg-white text-black text-[15px] px-4 py-1 rounded-2xl hidden md:block cursor-pointer">
-                        Explore Premium
+                    <p className = "bg-white text-black text-[15px] px-4 py-1 rounded-2xl hidden md:block cursor-pointer border-2 border-lime-800 hover:bg-gray-100">
+                        Switch to root
                     </p>
 
-                    <p className = "bg-black px-3 py-1 rounded-2xl text-[15px]">
-                        Install App
+                    <p className = "bg-black px-3 py-1 rounded-2xl text-[15px] border-2 border-white hover:bg-gray-100 hover:text-black cursor-pointer">
+                        Source Code
                     </p>
 
-                    <p className = "bg-yellow-400 text-black w-7 h-7 rounded-full flex items-center justify-center">R</p>
+                    <p className = "bg-yellow-400 text-black w-8 h-8 rounded-full flex items-center justify-center">
+                        R
+                    </p>
                 </div>
             </div>
 
