@@ -12,6 +12,7 @@ const PlayerContextProvider = (props) => {
 
     const [track, setTrack] = useState(songsData[0]) ;
     const [playStatus, setPlayStatus] = useState(false) ;
+    const [loop, setLoop] = useState(false);
 
     const [time, setTime] = useState({
         currentTime : {
@@ -54,11 +55,36 @@ const PlayerContextProvider = (props) => {
             await audioRef.current.play() ;
             setPlayStatus(true) ;
         }
+        
+        if (track.id == songsData.length - 1 && loop) {
+            await setTrack(songsData[0]) ;
+            setTime({
+                currentTime : {
+                    minute : 0,
+                    second : 0,
+                },
+                totalTime : {
+                    minute : Math.floor(audioRef.current.duration / 60),
+                    second : Math.floor(audioRef.current.duration % 60),
+                },
+            }) ;
+            await audioRef.current.play() ;
+            setPlayStatus(true) ;
+        }
     } ;
 
     const seekSong = async (event) => {
         // console.log(event) ;
         audioRef.current.currentTime = ((event.nativeEvent.offsetX / seekBg.current.offsetWidth) * audioRef.current.duration) ;
+    } ;
+
+    const loopSong = async () => {
+        if(loop){
+            setLoop(false);
+        }
+        else {
+            setLoop(true);
+        }
     } ;
 
 
@@ -105,6 +131,7 @@ const PlayerContextProvider = (props) => {
         previousSong,
         nextSong,
         seekSong,
+        loopSong,
     } ;
 
 

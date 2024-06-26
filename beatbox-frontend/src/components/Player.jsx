@@ -5,7 +5,7 @@ import { PlayerContext } from "../context/PlayerContext" ;
 
 
 const Player = () => {
-    const { seekBg, seekBar, playStatus, play, pause, track, time, previousSong, nextSong, seekSong } = useContext(PlayerContext) ;
+    const { seekBg, seekBar, playStatus, play, pause, track, time, previousSong, nextSong, seekSong, loopSong } = useContext(PlayerContext) ;
 
     return (
         <div className = "player h-[10%] bg-black flex justify-between items-center text-white px-4">
@@ -30,7 +30,7 @@ const Player = () => {
                     }
                     
                     <img onClick = { nextSong } className = "w-4 cursor-pointer" src = { assets.next_icon } alt = "next_icon" />
-                    <img className = "w-4 cursor-pointer" src = { assets.loop_icon } alt = "loop_icon" />
+                    <img onClick = { loopSong } className = "w-4 cursor-pointer" src = { assets.loop_icon } alt = "loop_icon" />
                 </div>
 
                 <div className = "flex items-center gap-5">
